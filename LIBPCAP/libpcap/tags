@@ -1,0 +1,47 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+IP_DF	nas.c	24;"	d	file:
+IP_DF	pcap.c	24;"	d	file:
+IP_HL	nas.c	19;"	d	file:
+IP_HL	pcap.c	19;"	d	file:
+IP_MF	nas.c	25;"	d	file:
+IP_MF	pcap.c	25;"	d	file:
+IP_OFFMASK	nas.c	26;"	d	file:
+IP_OFFMASK	pcap.c	26;"	d	file:
+IP_V	nas.c	18;"	d	file:
+IP_V	pcap.c	18;"	d	file:
+callback	nas.c	/^void callback(u_char* args, const struct pcap_pkthdr *pkthdr, const u_char* packet)$/;"	f
+callback	pcap.c	/^void callback(u_char* args, const struct pcap_pkthdr *pkthdr, const u_char* packet)$/;"	f
+handle_IP	nas.c	/^u_char* handle_IP(u_char *args,const struct pcap_pkthdr* pkthdr,const u_char* packet)$/;"	f
+handle_IP	pcap.c	/^u_char* handle_IP(u_char *args,const struct pcap_pkthdr* pkthdr,const u_char* packet)$/;"	f
+handle_ethernet	nas.c	/^u_int16_t handle_ethernet(u_char *args, const struct pcap_pkthdr* pkthdr, const u_char* packet)$/;"	f
+handle_ethernet	pcap.c	/^u_int16_t handle_ethernet(u_char *args, const struct pcap_pkthdr* pkthdr, const u_char* packet)$/;"	f
+ip_dst	nas.c	/^	struct  in_addr ip_src,ip_dst;$/;"	m	struct:my_ip	typeref:struct:my_ip::	file:
+ip_dst	pcap.c	/^	struct  in_addr ip_src,ip_dst;$/;"	m	struct:my_ip	typeref:struct:my_ip::	file:
+ip_id	nas.c	/^	u_int16_t	ip_id;   $/;"	m	struct:my_ip	file:
+ip_id	pcap.c	/^	u_int16_t	ip_id;   $/;"	m	struct:my_ip	file:
+ip_len	nas.c	/^	u_int16_t	ip_len; \/\/total length of ip datagram, header + data$/;"	m	struct:my_ip	file:
+ip_len	pcap.c	/^	u_int16_t	ip_len; \/\/total length of ip datagram, header + data$/;"	m	struct:my_ip	file:
+ip_off	nas.c	/^	u_int16_t	ip_off;  $/;"	m	struct:my_ip	file:
+ip_off	pcap.c	/^	u_int16_t	ip_off;  $/;"	m	struct:my_ip	file:
+ip_p	nas.c	/^	u_int8_t 	ip_p; $/;"	m	struct:my_ip	file:
+ip_p	pcap.c	/^	u_int8_t 	ip_p; $/;"	m	struct:my_ip	file:
+ip_src	nas.c	/^	struct  in_addr ip_src,ip_dst;$/;"	m	struct:my_ip	typeref:struct:my_ip::in_addr	file:
+ip_src	pcap.c	/^	struct  in_addr ip_src,ip_dst;$/;"	m	struct:my_ip	typeref:struct:my_ip::in_addr	file:
+ip_sum	nas.c	/^	u_int16_t	ip_sum;$/;"	m	struct:my_ip	file:
+ip_sum	pcap.c	/^	u_int16_t	ip_sum;$/;"	m	struct:my_ip	file:
+ip_tos	nas.c	/^	u_int8_t 	ip_tos;$/;"	m	struct:my_ip	file:
+ip_tos	pcap.c	/^	u_int8_t 	ip_tos;$/;"	m	struct:my_ip	file:
+ip_ttl	nas.c	/^	u_int8_t	ip_ttl; $/;"	m	struct:my_ip	file:
+ip_ttl	pcap.c	/^	u_int8_t	ip_ttl; $/;"	m	struct:my_ip	file:
+ip_vhl	nas.c	/^	u_int8_t        ip_vhl;$/;"	m	struct:my_ip	file:
+ip_vhl	pcap.c	/^	u_int8_t        ip_vhl;$/;"	m	struct:my_ip	file:
+main	nas.c	/^int main()$/;"	f
+main	pcap.c	/^int main()$/;"	f
+main	pcap1.c	/^int main()$/;"	f
+my_ip	nas.c	/^struct my_ip {$/;"	s	file:
+my_ip	pcap.c	/^struct my_ip {$/;"	s	file:

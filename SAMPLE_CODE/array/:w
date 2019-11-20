@@ -1,0 +1,45 @@
+#include <stdio.h>
+int main(int argc, char **argv)
+{
+	for (int i=1; i<argc-c;i++)
+	{
+			printf("argv[%d]:%d\n",i,argv[i]);
+	}
+	int c,l;
+	int c_sum=0,l_sum=0;
+	printf("Enter the number of fruit for c\n");
+	scanf("%d",&c);
+	printf("Enter the number of fruit for l\n");
+	scanf("%d",&l);
+	if (c >= argc )
+	{
+		printf("Enter a lesser quantity\n");
+	}
+	if (l >= argc )
+	{
+		printf("Enter a lesser quantity\n");
+	}
+	
+	for (int i=1; i<argc-c;i++)
+	{
+			printf("argv[%d]:%d\n",i,argv[i]);
+	printf("i:%d\t",i);
+		c_sum=0;l_sum=0;
+		for (int j=1;j<c;j++)
+		{
+			printf("c_sum=%d\t",c_sum);
+			printf("argv[%d]:%d\n",j,argv[j]);
+			printf("j:%d\t",j);
+			c_sum += argv[j];
+		}
+		for (int k=c;k<argc-l;k++)
+		{
+			printf("l_sum=%d\t",l_sum);
+			printf("k:%d\t",k);
+			l_sum += argv[k];
+		}
+	printf("c_sum:%d\n",c_sum);
+	printf("l_sum:%d\n",l_sum);
+	printf("\n\n");
+	}	
+}

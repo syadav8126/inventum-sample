@@ -1,0 +1,472 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>Section 10.5.&nbsp; libpcap Library Reference</title>
+<link rel="STYLESHEET" type="text/css" href="Section%2010.5.%C2%A0%20libpcap%20Library%20Reference_files/style.css">
+<link rel="STYLESHEET" type="text/css" href="Section%2010.5.%C2%A0%20libpcap%20Library%20Reference_files/docsafari.css">
+</head>
+<body>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr><td><div style="MARGIN-LEFT: 0.15in;"><a href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/toc.html"><img src="Section%2010.5.%C2%A0%20libpcap%20Library%20Reference_files/teamlib.gif" alt="Team LiB" width="62" height="15" border="0" align="absmiddle"></a></div></td>
+<td align="right"><div style="MARGIN-LEFT: 0.15in;">
+<a href="http://192.168.1.13:8104/0596007949/networkst-chp-10-sect-4.html"><img src="Section%2010.5.%C2%A0%20libpcap%20Library%20Reference_files/previous.gif" alt="Previous Section" width="62" height="15" border="0" align="absmiddle"></a>
+<a href="http://192.168.1.13:8104/0596007949/networkst-chp-11.html"><img src="Section%2010.5.%C2%A0%20libpcap%20Library%20Reference_files/next.gif" alt="Next Section" width="41" height="15" border="0" align="absmiddle"></a>
+</div></td></tr></tbody></table>
+<br><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td valign="top"><a name="networkst-CHP-10-SECT-5"></a>
+<h3 class="docSection1Title">10.5. libpcap Library Reference</h3>
+
+<p class="docText"><a name="networkst-CHP-10-ITERM-2985"></a> <a name="networkst-CHP-10-ITERM-2986"></a>Although the Arpsniff tool
+demonstrates a majority of the functionality that most tools require,
+the <i>libpcap</i> library has a lot of functionality
+we have not yet explored. This section provides a high-level
+reference, by functionality type, to all the functionality present in
+<i>libpcap</i>.</p>
+
+<a name="networkst-CHP-10-SECT-5.1"></a>
+<h4 class="docSection2Title">10.5.1. Lookup Functions</h4>
+
+<p class="docText">The <a name="networkst-CHP-10-ITERM-2987"></a> <a name="networkst-CHP-10-ITERM-2988"></a>following functions are used to
+provide information about available interfaces.</p>
+
+<a name="ch10-25-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_lookupdev</i></b></td><td align="right"><i>Prototype: <tt>char *pcap_lookupdev(char *errbuf)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_lookupdev</tt> finds the first usable
+interface (active and supported by <i>libpcap</i>) for
+use with <tt>pcap_open_live</tt> and
+<tt>pcap_lookup_net</tt> returned by the operating system.
+The function returns a string containing the
+device's name if successful. If not successful, the
+function returns <tt>NULL</tt> and
+<tt>errbuf</tt> contains a human-readable error message.
+<tt>pcap_lookupdev</tt> is not recommended in situations
+where multiple network interfaces are in use. Note that if the
+calling user does not have appropriate privileges, this function
+might not return a device even though usable devices are present. You
+can find an example of using <tt>pcap_lookupdev</tt> in the
+<a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.2">Section 10.2.2</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-26-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_findalldevs</i></b></td><td align="right"><i>Prototype: <tt>int pcap_findalldevs(pcap_if_t **alldevsp, char *errbuf)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_findalldevs</tt> finds all usable (active
+and supported by <i>libpcap</i>) interfaces for use
+with <tt>pcap_open_live</tt>. If successful, the function
+returns <tt>0</tt> and <tt>alldevsp</tt> points
+to a linked list of <tt>pcap_if_t</tt> structures with
+interface details. If not successful, the function returns
+<tt>-1</tt> and <tt>errbuf</tt> is populated with
+a human-readable error message. You can find an example of utilizing
+the information returned by <tt>pcap_findalldevs</tt> in
+the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.2">Section 10.2.2</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-27-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_lookupnet</i></b></td><td align="right"><i>Prototype: <tt>int pcap_lookupnet(const char *device, bpf_u_int32 *netp, bpf_u_int32</tt> <tt>*maskp, char *errbuf)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_lookupnet</tt> returns the network
+address and network mask of the device supplied in the device
+parameter. The function returns <tt>0</tt> if successful
+and <tt>netp</tt> and <tt>maskp</tt> point to the
+network interface address and netmask, respectively. If an error
+occurs, <tt>pcap_lookupnet</tt> returns
+<tt>-1</tt>, and <tt>errbuf</tt> is populated
+with a human-readable error message. You can find an example of using
+the <tt>pcap_lookupnet</tt> function in the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.4">Section 10.2.4</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-28-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_freealldevs</i></b></td><td align="right"><i>Prototype: <tt>void pcap_freealldevs(pcap_if_t *alldevs)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_freealldevs</tt> frees a linked list of
+interface information returned by the
+<tt>pcap_findalldevs</tt> function.</p>
+
+<a name="networkst-CHP-10-SECT-5.2"></a>
+<h4 class="docSection2Title">10.5.2. Packet-Capture Functions</h4>
+
+<p class="docText">The <a name="networkst-CHP-10-ITERM-2989"></a> <a name="networkst-CHP-10-ITERM-2990"></a>following are functions for capturing
+packets and manipulating live capture sources.</p>
+
+<a name="ch10-30-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_open_live</i></b></td><td align="right"><i>Prototype: <tt>pcap_t *pcap_open_live(const char *device, int snaplen, int promisc, int</tt> <tt>to_ms, char *errbuf)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_open_live</tt> is used to open a live
+packet-capturing session from the network interface
+<tt>device</tt> (for example, <tt>eth0</tt> on
+Linux, or <tt>le0</tt> on a Sun Sparc).
+<tt>device</tt> can be <tt>NULL</tt> or
+<tt>any</tt> on recent Linux systems, in which case all
+interfaces are used for packet capture. <tt>snaplen</tt>
+specifies the length in bytes to be captured. If you want to capture
+the entire packet, set this to more than the packet size, including
+headers for the link type you are capturing from (65,535 should be
+sufficient). <tt>promisc</tt> should be
+<tt>1</tt> if the interface should be put into promiscuous
+mode or <tt>0</tt> otherwise. When a network interface is
+in promiscuous mode, and promiscuous mode is supported by the
+underlying data link layer, it captures all traffic on the network,
+regardless of whether it is intended for the host running the packet
+capture. This does not have any effect if the device is set to
+<tt>NULL</tt> or <tt>any</tt>. The parameter
+<tt>to_ms</tt> specifies a read timeout in milliseconds for
+when read operations should not necessarily return immediately when a
+packet is seen, therefore allowing us to capture multiple packets in
+one read operation. <tt>to_ms</tt> is not supported on all
+platforms (for unsupported systems, this value is ignored), and is
+useful mostly if you're going to use
+<tt>pcap_dispatch</tt> in nonblocking mode. A value of
+<tt>0</tt> causes <i>libpcap</i> to wait
+until packets arrive. <tt>pcap_open_live</tt> returns
+<tt>NULL</tt> is the open fails, and
+<tt>errbuf</tt> is set to a human-readable error message.
+<tt>errbuf</tt> should be of at least
+<tt>PCAP_ERRBUF_SIZE</tt> size.
+<tt>pcap_open_live</tt> can also return a warning message
+in <tt>errbuf</tt> on a successful call.
+<tt>errbuf</tt> should be checked after the successful call
+to determine if <tt>errbuf</tt> is still a zero length
+string, and any warnings should be returned to the user. You can find
+an example of using the <tt>pcap_open_live</tt> function in
+the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.3">Section 10.2.3</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-31-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_next</i></b></td><td align="right"><i>Prototype: <tt>const u_char *pcap_next(pcap_t *p, struct pcap_pkthdr *h)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_next</tt> reads the next packet available
+on the buffer. This is a wrapper to <tt>pcap_dispatch</tt>
+called with a <tt>cnt</tt> of <tt>1</tt>. If
+successful, <tt>pcap_next</tt> returns a pointer to the
+captured packet. If the read was not successful for any reason, no
+packet was available due to a timeout, or no packets passed a filter,
+<tt>pcap_next</tt> returns <tt>NULL</tt>. No
+packet header information is returned for this function. Because no
+error messages are returned by <tt>pcap_next</tt>, it is
+more suited to simple uses and for reading from dump files. Use
+<tt>pcap_next_ex</tt> if you need error handling.</p>
+
+<a name="ch10-32-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_next_ex</i></b></td><td align="right"><i>Prototype: <tt>int</tt> <tt>pcap_next_ex(pcap_t</tt> <tt>*p</tt>, <tt>struct</tt> <tt>pcap_pkthdr</tt> <tt>**pkt_header</tt>, <tt>const</tt> <tt>u_char</tt> <tt>**pkt_data)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_next_ex</tt> returns the next packet
+available on the buffer. If successful, the function returns
+<tt>1</tt>, and <tt>pkt_header</tt> and
+<tt>pkt_data</tt> point to the captured
+packet's <i>libpcap</i> capture
+information header and the packet, respectively. If not successful,
+the function returns <tt>0</tt> if the timeout expired,
+<tt>-1</tt> if an error occurred reading the packet, or
+<tt>-2</tt> if the packet is being read from a saved file
+and there are no more packets to read.</p>
+
+<a name="ch10-33-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_loop</i></b></td><td align="right"><i>Prototype: <tt>int pcap_loop(pcap_t *p, int cnt, pcap_handler callback, u_char *user)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_loop</tt> enters a loop for processing
+<tt>cnt</tt> packets from the opened capture (live or saved
+file). Unlike <tt>pcap_dispatch</tt>,
+<tt>pcap_loop</tt> does not observe read timeouts. If
+<tt>cnt</tt> is set to a negative number, the loop
+continues forever. The function specified by
+<tt>callback</tt> is the name of a function of the
+prototype <tt>void</tt> <tt>callback</tt>
+<tt>(u_char</tt> <tt>*user</tt>,
+<tt>const</tt> <tt>struct</tt>
+<tt>pcap_pkthdr</tt> <tt>*header</tt>,
+<tt>const</tt> <tt>u_char*</tt>
+<tt>packet)</tt>. This function is called for each packet
+captured. The <tt>user</tt> parameter is a user-specifiable
+value that is passed to the callback function when it is invoked, and
+can be <tt>NULL</tt>. The function
+<tt>pcap_loop</tt> returns <tt>0</tt> if
+<tt>cnt</tt> packets were successfully read,
+<tt>-1</tt> on an error, and <tt>-2</tt> if a
+call to <tt>pcap_breakloop</tt> occurred before packets
+have been captured. If an error has occurred, you can use
+<tt>pcap_perror( )</tt> or <tt>pcap_geterr( )</tt>
+to obtain the error message. You can find an example of
+using the <tt>pcap_loop</tt> function in the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.5">Section 10.2.5</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-34-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_dispatch</i></b></td><td align="right"><i>Prototype: <tt>int pcap_dispatch(pcap_t *p, int cnt, pcap_handler callback, u_char</tt> <tt>*user)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_dispatch</tt> captures and processes
+packets while observing read timeouts specified in
+<tt>pcap_open_live</tt>. The <tt>cnt</tt>
+parameter specifies the maximum number of packets that are to be
+processed. When reading from a live capture, <tt>0</tt> up
+to <tt>cnt</tt> packets can be processed depending on the
+status of the buffer. A <tt>cnt</tt> value of
+<tt>-1</tt> processes all packets in the buffer or the
+entire file, if used on a saved file. The function specified by
+<tt>callback</tt> is the name of a function of the
+prototype <tt>void callback (u_char *user, const struct
+pcap_pkthdr *header, const u_char* packet)</tt>. This function
+is called for each packet. The <tt>user</tt> parameter is a
+user-specifiable value that is passed to the callback function when
+it is invoked, and can be <tt>NULL</tt>. The function
+returns the number of packets processed if successful.
+<tt>0</tt> is returned if no packets were read (due to a
+read timeout, or if in nonblocking mode and no packets were available
+to be read), <tt>-1</tt> if an error occurred, or
+<tt>-2</tt> if a call to <tt>pcap_breakloop</tt>
+was made before any packets were captured. If an error has occurred,
+you can use <tt>pcap_perror( )</tt> or
+<tt>pcap_geterr( )</tt> to obtain the error message. Note
+that because of the way <tt>pcap_dispatch</tt> behaves with
+different platforms, it might not necessarily return immediately
+after a read timeout.</p>
+
+<a name="ch10-35-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_setnonblock</i></b></td><td align="right"><i>Prototype: <tt>int pcap_setnonblock(pcap_t *p, int nonblock, char *errbuf)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_setnonblock</tt> allows you to set the
+status of a live capture as blocking or nonblocking. The
+<tt>nonblock</tt> parameter should be <tt>1</tt>
+to set the status to nonblocking and <tt>0</tt> to set the
+status to blocking (default). <tt>pcap_setnonblock</tt> is
+intended for use with <tt>pcap_dispatch</tt>, and when the
+live capture is set to nonblocking, <tt>pcap_dispatch</tt>
+returns immediately if no packets are available for processing,
+without observing any read timeouts. If the live capture is set to
+block, the capture waits for packets to arrive.
+<tt>pcap_setnonblock</tt> returns <tt>0</tt> on
+success and <tt>-1</tt> on an error with a human-readable
+error message returned in <tt>errbuf</tt>.</p>
+
+<a name="ch10-36-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_getnonblock</i></b></td><td align="right"><i>Prototype: <tt>int pcap_getnonblock(pcap_t *p, char *errbuf)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_getnonblock</tt> returns the current
+blocking status of <tt>1</tt> (nonblocking) or
+<tt>0</tt> (blocking; the default). If an error occurs, the
+function returns <tt>-1</tt> with the
+<tt>errbuf</tt> containing a human-readable error message.
+<tt>pcap_getnonblock</tt> always returns
+<tt>0</tt> on saved files.</p>
+
+<a name="ch10-37-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_set_datalink</i></b></td><td align="right"><i>Prototype: <tt>int pcap_set_datalink(pcap_t *p, int dlt)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_set_datalink</tt> sets the data link type
+on the underlying data link layer to the value in
+<tt>dlt</tt> (refer to <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-TABLE-2">Table 10-2</a> for
+example data link types) where the underlying data link layer
+supports multiple link types. Support for multiple link types is not
+available on all link types or platforms. You can obtain a list of
+all possible data link types supported for an interface using
+<tt>pcap_list_datalinks</tt>. The function returns
+<tt>0</tt> on success and <tt>-1</tt> on failure.</p>
+
+<a name="ch10-38-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_compile</i></b></td><td align="right"><i>Prototype: <tt>int pcap_compile(pcap_t *p, struct bpf_program *fp, char *str, intoptimize, bpf_u_int32 netmask)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_compile</tt> is used to compile the
+<tt>tcpdump</tt> format filter string
+<tt>str</tt> into a BPF filter <tt>fp</tt>.
+<tt>optimize</tt> controls whether the resulting code is
+optimized (value <tt>1</tt>) or not (value
+<tt>0</tt>). <tt>netmask</tt> is the IPv4 netmask
+of the network interface being used for capture. This value can be
+obtained using <tt>pcap_lookupnet</tt>, or it can be
+<tt>0</tt>, in which case some tests for IPv4 broadcast
+addresses will not work correctly. <tt>pcap_compile</tt>
+returns <tt>0</tt> on success, <tt>-1</tt> on
+error. You can find an example of using
+<tt>pcap_compile</tt> in the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.4">Section 10.2.4</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-39-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_compile_nopcap</i></b></td><td align="right"><i>Prototype: <tt>int</tt> <tt>pcap_compile_nopcap(int snaplen, int linktype, struct bpf_program</tt> <tt>*fp,char *str, int optimize, bpf_u_int32 netmask)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_compile_nopcap</tt> is a wrapper to
+<tt>pcap_compile</tt> that allows us to compile BPF filters
+without a <tt>pcap_t</tt> structure.
+<tt>snaplen</tt> and <tt>linktype</tt> specify
+the capture length and the link type (as per <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-TABLE-2">Table 10-2</a>) and are used as arguments to
+<tt>pcap_open_dead</tt>.
+<tt>pcap_compile_nopcap</tt> returns <tt>0</tt>
+on success and <tt>-1</tt> on error.</p>
+
+<a name="ch10-40-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_setfilter</i></b></td><td align="right"><i>Prototype: <tt>int pcap_setfilter(pcap_t *p, struct bpf_program *fp)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_setfilter</tt> is used to set a compiled
+BPF filter on a capture session. <tt>fp</tt> contains the
+compiled BPF program as generated by <tt>pcap_compile</tt>.
+<tt>pcap_setfilter</tt> returns <tt>0</tt> on
+success and <tt>-1</tt> on error. You can find an example
+of using <tt>pcap_setfilter</tt> in the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.4">Section 10.2.4</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-41-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_freecode</i></b></td><td align="right"><i>Prototype: <tt>void pcap_freecode(struct bpf_program *fp)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_freecode</tt> is used to free the memory
+used by a compiled BPF filter. You can find an example of using
+<tt>pcap_freecode</tt> in the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.4">Section 10.2.4</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-42-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_breakloop</i></b></td><td align="right"><i>Prototype: <tt>void pcap_breakloop(pcap_t *)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_breakloop</tt> is used to signal
+<tt>pcap_dispatch</tt> or <tt>pcap_loop</tt> (and
+<tt>pcap_next</tt> on some platforms) to exit. A flag is
+set that is checked within many of the functions, and therefore
+<tt>pcap_dispatch</tt> and <tt>pcap_loop</tt>
+might not exit immediately but can capture up to one more packet.</p>
+
+<a name="ch10-43-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_fileno</i></b></td><td align="right"><i>Prototype: <tt>int pcap_fileno(pcap_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_fileno</tt> returns the file descriptor
+for the capture session. This returns the handle for when a live
+capture is in progress and <tt>-1</tt> if the session is
+using a saved file.</p>
+
+<a name="ch10-44-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_close</i></b></td><td align="right"><i>Prototype: <tt>void pcap_close(pcap_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_close</tt> closes the open session and
+any associated file handles.</p>
+
+<a name="ch10-45-fm2xml"></a><a name="networkst-CHP-10-ITERM-2991"></a><a name="networkst-CHP-10-ITERM-2992"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_open_dead</i></b></td><td align="right"><i>Prototype: <tt>pcap_t *pcap_open_dead(int linktype, int snaplen)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_open_dead</tt> is used to create a
+<tt>pcap_t</tt> handle, without opening a live capture or
+saved file. This is commonly used for compiling BPF code.
+<tt>linktype</tt> and <tt>snaplen</tt> specify
+the link type as per <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-TABLE-2">Table 10-2</a> and the capture
+length.<a name="networkst-CHP-10-ITERM-2991"></a>
+<a name="networkst-CHP-10-ITERM-2992"></a></p>
+
+<a name="networkst-CHP-10-SECT-5.3"></a>
+<h4 class="docSection2Title">10.5.3. Save and Dump File Functions</h4>
+
+<p class="docText">The following functions are for saving and reading packets from files
+on disk.<a name="networkst-CHP-10-ITERM-2993"></a> <a name="networkst-CHP-10-ITERM-2994"></a>
+<a name="networkst-CHP-10-ITERM-2995"></a></p>
+
+<a name="ch10-47-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_open_offline</i></b></td><td align="right"><i>Prototype: <tt>pcap_t *pcap_open_offline(const char *fname, char *errbuf)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_open_offline</tt> is used to open a
+<i>libpcap</i>-format saved file as a packet source.
+The <tt>fname</tt> string holds a filename appropriate for
+the underlying platform, and can be "<tt>-</tt>" to denote
+<tt>STDIN</tt>. On success a <tt>pcap_t</tt>
+handle is returned that can be used to return packets using any of
+the <i>libpcap</i> functions for capturing packets
+(such as <tt>pcap_next_ex</tt>). On error, the function
+returns <tt>NULL</tt>, and <tt>errbuf</tt> is
+populated with an appropriate human-readable error message.</p>
+
+<a name="ch10-48-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_dump_open</i></b></td><td align="right"><i>Prototype: <tt>pcap_dumper_t *pcap_dump_open(pcap_t *p, const char *fname)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_dump_open</tt> is used to open a file for
+saving packets to a disk file. The <tt>fname</tt> string
+holds an appropriate filename for the underlying platform, or can be
+"<tt>-</tt>" to denote <tt>STDOUT</tt>.
+<tt>pcap_dump_open</tt> returns a
+<tt>pcap_dumper_t</tt> handle on success that can used for
+calling <tt>pcap_dump</tt>, or <tt>NULL</tt> on
+error.</p>
+
+<a name="ch10-49-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_dump</i></b></td><td align="right"><i>Prototype: <tt>void pcap_dump(u_char *user, struct pcap_pkthdr *h, u_char *sp)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_dump</tt> writes a packet with the
+<i>libpcap</i> packet header <tt>h</tt>, and
+the packet body <tt>sp</tt>, to the saved file opened with
+<tt>pcap_dump_open</tt>. If called directly, the
+<tt>user</tt> value should be the
+<tt>pcap_dumper_t</tt> handle opened by
+<tt>pcap_dump_open</tt>. <tt>pcap_dump</tt> can
+also be called from <tt>pcap_loop</tt> or
+<tt>pcap_dispatch</tt> to dump captured packets directly to
+a file.</p>
+
+<a name="ch10-50-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_dump_close</i></b></td><td align="right"><i>Prototype: <tt>void pcap_dump_close(pcap_dumper_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_dump_close</tt> closes the saved file
+associated with the <tt>p</tt> handle.</p>
+
+<a name="ch10-51-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_dump_flush</i></b></td><td align="right"><i>Prototype: <tt>int pcap_dump_flush(pcap_dumper_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_dump_flush</tt> is used to flush the file
+output buffer to disk therefore writing any packets output on dump
+session <tt>p</tt> using <tt>pcap_dump</tt>, but
+not yet written to disk. <tt>pcap_dump_flush</tt> returns
+<tt>0</tt> on success, or <tt>-1</tt> on error.</p>
+
+<a name="ch10-52-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_major_version</i></b></td><td align="right"><i>Prototype: <tt>int pcap_major_version(pcap_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_major_version</tt> returns the major
+version of the <i>libpcap</i> library used to write a
+saved file opened with <tt>pcap_open_offline</tt>.</p>
+
+<a name="ch10-53-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_minor_version</i></b></td><td align="right"><i>Prototype: <tt>int pcap_minor_version(pcap_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_minor_version</tt> returns the minor
+version of the <i>libpcap</i> library used to write a
+saved file opened with <tt>pcap_open_offline</tt>.</p>
+
+<a name="ch10-54-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_file</i></b></td><td align="right"><i>Prototype: <tt>FILE *pcap_file(pcap_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_file</tt> returns the file handle to a
+saved file opened with <tt>pcap_open_offline</tt>.
+<tt>pcap_file</tt> returns the handle on success, or
+<tt>NULL</tt> if the <tt>pcap_t</tt> handle
+<tt>p</tt> relates to a live capture opened with
+<tt>pcap_open_live</tt>.</p>
+
+<a name="ch10-55-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_is_swapped</i></b></td><td align="right"><i>Prototype: <tt>int pcap_is_swapped(pcap_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_is_swapped</tt> returns
+<tt>1</tt> if the saved file referred to by
+<tt>p</tt> is in a different byte order than the byte order
+used in the underlying platform, or <tt>0</tt> if it is the
+same. If the saved file is in a different byte order, most platforms
+provide the <tt>ntohs( )</tt> and <tt>ntohl()</tt> functions for converting network order to host order
+(i.e., big endian to little endian) and/or <tt>htons()</tt> and <tt>htonl( )</tt> for converting host order
+to network order (i.e., little endian to big endian).</p>
+
+<a name="networkst-CHP-10-SECT-5.4"></a>
+<h4 class="docSection2Title">10.5.4. Status Functions</h4>
+
+<p class="docText">These functions are used to interrogate interfaces for
+information.<a name="networkst-CHP-10-ITERM-2996"></a> <a name="networkst-CHP-10-ITERM-2997"></a></p>
+
+<a name="ch10-57-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_datalink</i></b></td><td align="right"><i>Prototype: <tt>int pcap_datalink(pcap_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_datalink</tt> returns the type of the
+underlying data link layer of a session. This can be compared to the
+predefined list of values included in <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-TABLE-2">Table 10-2</a>,
+or converted to a human-readable string using
+<tt>pcap_datalink_val_to_name</tt> or
+<tt>pcap_datalink_val_to_description</tt>. You can find an
+example of using <tt>pcap_datalink</tt> in the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.4">Section 10.2.4</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-58-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_list_datalinks</i></b></td><td align="right"><i>Prototype: <tt>int pcap_list_datalinks(pcap_t *p, int **dlt_buf);</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_list_datalinks</tt> lists all data link
+types supported by a capture device. Where multiple types are
+supported, a particular data link type can be selected with
+<tt>pcap_set_datalink</tt>.
+<tt>pcap_list_datalinks</tt> returns the number of
+supported data links on success, with <tt>dlt_buf</tt>
+pointing to an array of data link type values. The function returns
+<tt>-1</tt> on error. The data link type values can be
+converted to human-readable link types (such as the values in <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-TABLE-2">Table 10-2</a>) using the
+<tt>pcap_datalink_val_to_name</tt> or
+<tt>pcap_datalink_val_to_description</tt> functions. You
+can find an example of using <tt>pcap_list_datalinks</tt>
+in the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.4">Section 10.2.4</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-59-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_snapshot</i></b></td><td align="right"><i>Prototype: <tt>int pcap_snapshot(pcap_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_snapshot</tt> returns the number of bytes
+captured per packet (snapshot length) of the opened session. This is
+the value specified at the <tt>pcap_open_live</tt> call to
+open the interface.</p>
+
+<a name="ch10-60-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_stats</i></b></td><td align="right"><i>Prototype: <tt>int pcap_stats(pcap_t *p, struct pcap_stat *ps)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_stats</tt> is used to return capture
+statistics for all packets captured since the start of the capture.
+<tt>pcap_stats</tt> is relevant only for live captures
+because statistics are not stored in saved files. The
+<tt>pcap_stat</tt> structure returned contains the members
+<tt>ps_recv</tt> (number of packets received),
+<tt>ps_drop</tt> (number of packets dropped),
+<tt>ps_ifdrop</tt> (number of packets dropped by the
+interface; this is not supported on all platforms), and, on Windows
+platforms, <tt>bs_capt</tt> (number of packets reaching the
+application). Exactly what is measured for packets received and
+dropped depends on the platform. For example, when using BPF filters,
+some platforms count all packets received, while others count only
+the packets passing the filter. <tt>pcap_stats</tt> returns
+<tt>-1</tt> on error or when statistics are not supported
+and it returns <tt>0</tt> on success.</p>
+
+<a name="ch10-61-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_lib_version</i></b></td><td align="right"><i>Prototype: <tt>const char *pcap_lib_version(void)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_lib_version</tt> returns a string
+containing the description of the <i>libpcap</i>
+version in use. For <i>libpcap</i> version 0.8.3 this
+is something such as <tt>libpcap version 0.8.3</tt>.</p>
+
+<a name="ch10-62-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_datalink_name_to_val</i></b></td><td align="right"><i>Prototype: <tt>int pcap_datalink_name_to_val(const char *name);</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_datalink_name_to_val</tt> returns the
+numeric value of a data link type when supplied as a string. The
+string <tt>name</tt> is a data link type, minus the
+<tt>DLT_</tt>, as described in <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-TABLE-2">Table 10-2</a>. The numeric value is returned on success, or
+<tt>-1</tt> on error.</p>
+
+<a name="ch10-63-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_datalink_val_to_name</i></b></td><td align="right"><i>Prototype: <tt>const char *pcap_datalink_val_to_name(int dlt);</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_datalink_val_to_name</tt> returns the
+data link name as per <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-TABLE-2">Table 10-2</a> when supplied with
+the numeric value in <tt>dlt</tt>. This returns the name on
+success, or <tt>NULL</tt> on error. You can find an example
+of using <tt>pcap_datalink_val_to_name</tt> in the <a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.4">Section 10.2.4</a>
+section earlier in this chapter.</p>
+
+<a name="ch10-64-fm2xml"></a><a name="networkst-CHP-10-ITERM-2998"></a><a name="networkst-CHP-10-ITERM-2999"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_datalink_val_to_description</i></b></td><td align="right"><i>Prototype: <tt>const char *pcap_datalink_val_to_description(int dlt)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_datalink_val_to_description</tt> returns
+a short text description when supplied with the numeric value in
+<tt>dlt</tt>. This description is contained in the array
+<tt>dlt_choices</tt> in <i>pcap.c</i> of the
+<i>libpcap</i> source code. This returns the name on
+success, or <tt>NULL</tt> on error. You can find an example
+of using <tt>pcap_datalink_val_to_description</tt> in the
+<a class="docLink" href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/networkst-CHP-10-SECT-2.html#networkst-CHP-10-SECT-2.4">Section 10.2.4</a>
+section earlier in this chapter.<a name="networkst-CHP-10-ITERM-2998"></a> <a name="networkst-CHP-10-ITERM-2999"></a></p>
+
+<a name="networkst-CHP-10-SECT-5.5"></a>
+<h4 class="docSection2Title">10.5.5. Error-Handling Functions</h4>
+
+<p class="docText"><i>libpcap</i>
+<a name="networkst-CHP-10-ITERM-3000"></a> <a name="networkst-CHP-10-ITERM-3001"></a>supplies three functions for
+determining and reporting errors, as shown in the following.</p>
+
+<a name="ch10-66-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_geterr</i></b></td><td align="right"><i>Prototype: <tt>char *pcap_geterr(pcap_t *p)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_geterr</tt> returns the error text for
+the last <i>libpcap</i> error that has occurred. This
+requires that the <tt>pcap_t</tt> handle
+<tt>p</tt> has not been closed using
+<tt>pcap_close</tt>. <tt>pcap_geterr</tt> is used
+to obtain human-readable error messages for all
+<i>libpcap</i> functions that do not supply this
+ability through the use of an <tt>errbuf</tt> parameter.</p>
+
+<a name="ch10-67-fm2xml"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_strerror</i></b></td><td align="right"><i>Prototype: <tt>char *pcap_strerror(int error)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_strerror</tt> is an implementation of
+<tt>strerror(1)</tt> for platforms that do not have their
+own implementation. <tt>pcap_strerror</tt> returns an
+operating system error message for a given error code.</p>
+
+<a name="ch10-68-fm2xml"></a><a name="networkst-CHP-10-ITERM-3002"></a><a name="networkst-CHP-10-ITERM-3003"></a><a name="networkst-CHP-10-ITERM-3004"></a><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"><b><i>pcap_perror</i></b></td><td align="right"><i>Prototype: <tt>void pcap_perror(pcap_t *p, char *prefix)</tt></i></td></tr></tbody></table><hr width="515" size="3" noshade="true" color="black" align="left"><table width="515" cellpadding="5" border="0"><tbody><tr><td align="left"></td><td align="right"></td></tr></tbody></table><p class="docText">Purpose: <tt>pcap_perror</tt> prints the last
+<i>libpcap</i> error message to
+<tt>STDERR</tt> in human-readable format, prefixed by the
+string <tt>prefix</tt><a name="networkst-CHP-10-ITERM-3002"></a> <a name="networkst-CHP-10-ITERM-3003"></a>.<a name="networkst-CHP-10-ITERM-3004"></a></p>
+
+
+<ul></ul></td></tr></tbody></table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr><td><div style="MARGIN-LEFT: 0.15in;"><a href="http://books.gigatux.nl/mirror/networksecuritytools/0596007949/toc.html"><img src="Section%2010.5.%C2%A0%20libpcap%20Library%20Reference_files/teamlib.gif" alt="Team LiB" width="62" height="15" border="0" align="absmiddle"></a></div></td>
+<td align="right"><div style="MARGIN-LEFT: 0.15in;">
+<a href="http://192.168.1.13:8104/0596007949/networkst-chp-10-sect-4.html"><img src="Section%2010.5.%C2%A0%20libpcap%20Library%20Reference_files/previous.gif" alt="Previous Section" width="62" height="15" border="0" align="absmiddle"></a>
+<a href="http://192.168.1.13:8104/0596007949/networkst-chp-11.html"><img src="Section%2010.5.%C2%A0%20libpcap%20Library%20Reference_files/next.gif" alt="Next Section" width="41" height="15" border="0" align="absmiddle"></a>
+</div></td></tr></tbody></table>
+</body></html>

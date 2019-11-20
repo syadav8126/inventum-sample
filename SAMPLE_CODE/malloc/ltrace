@@ -1,0 +1,39 @@
+SYS_brk(0)                                       = 0x2464000
+SYS_access("/etc/ld.so.nohwcap", 00)             = -2
+SYS_access("/etc/ld.so.preload", 04)             = -2
+SYS_open("/etc/ld.so.cache", 524288, 01)         = 3
+SYS_fstat(3, 0x7ffd9d7cac90)                     = 0
+SYS_mmap(0, 0x1e8a8, 1, 2)                       = 0x7fb5cebfd000
+SYS_close(3)                                     = 0
+SYS_access("/etc/ld.so.nohwcap", 00)             = -2
+SYS_open("/lib/x86_64-linux-gnu/libc.so.6", 524288, 031660360550) = 3
+SYS_read(3, "\177ELF\002\001\001\003", 832)      = 832
+SYS_fstat(3, 0x7ffd9d7cace0)                     = 0
+SYS_mmap(0, 4096, 3, 34)                         = 0x7fb5cebfc000
+SYS_mmap(0, 0x3c99a0, 5, 2050)                   = 0x7fb5ce62d000
+SYS_mprotect(0x7fb5ce7ed000, 2097152, 0)         = 0
+SYS_mmap(0x7fb5ce9ed000, 0x6000, 3, 2066)        = 0x7fb5ce9ed000
+SYS_mmap(0x7fb5ce9f3000, 0x39a0, 3, 50)          = 0x7fb5ce9f3000
+SYS_close(3)                                     = 0
+SYS_mmap(0, 4096, 3, 34)                         = 0x7fb5cebfb000
+SYS_mmap(0, 4096, 3, 34)                         = 0x7fb5cebfa000
+SYS_arch_prctl(4098, 0x7fb5cebfb700, 3, 34)      = 0
+SYS_mprotect(0x7fb5ce9ed000, 16384, 1)           = 0
+SYS_mprotect(0x600000, 4096, 1)                  = 0
+SYS_mprotect(0x7fb5cec1c000, 4096, 1)            = 0
+SYS_munmap(0x7fb5cebfd000, 125096)               = 0
+__libc_start_main(0x400566, 1, 0x7ffd9d7cb678, 0x4005c0 <unfinished ...>
+malloc(0 <unfinished ...>
+SYS_brk(0)                                       = 0x2464000
+SYS_brk(0x2485000)                               = 0x2485000
+<... malloc resumed> )                           = 0x2464010
+malloc(0)                                        = 0x2464030
+printf("%p\n", 0x2464010 <unfinished ...>
+SYS_fstat(1, 0x7ffd9d7cae30)                     = 0
+<... printf resumed> )                           = 10
+printf("%p\n", 0x2464030)                        = 10
+SYS_write(1, "0x2464010\n0x2464030\n", 200x2464010
+0x2464030
+)       = 20
+SYS_exit_group(0 <no return ...>
++++ exited (status 0) +++

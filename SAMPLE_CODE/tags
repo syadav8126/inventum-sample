@@ -1,0 +1,76 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	makefile/Makefile	/^CC=gcc$/;"	m
+CC	threads/Makefile	/^CC=gcc$/;"	m
+CFLAGS	makefile/Makefile	/^CFLAGS=-I.$/;"	m
+DEPS	makefile/Makefile	/^DEPS = hellomake.h$/;"	m
+OBJECT	threads/Makefile	/^OBJECT=thread_key.c$/;"	m
+Stack	stack/stack_array.c	/^struct Stack$/;"	s	file:
+StackNode	stack/stack_linked.c	/^struct StackNode$/;"	s	file:
+age	pointers/to_structure.c	/^	int age;$/;"	m	struct:__anon1	file:
+append	linked_list/l1.c	/^void append(struct node ** head_ref, int new_data){$/;"	f
+array	stack/stack_array.c	/^    int* array;$/;"	m	struct:Stack	file:
+capacity	stack/stack_array.c	/^    unsigned capacity;$/;"	m	struct:Stack	file:
+changedata	threads/thread_key.c	/^int changedata (int i, float k, int tempvar) { \/* Change specific data for threads *\/$/;"	f
+child1	threads/thread_key.c	/^void *child1 (void *arg)$/;"	f
+child2	threads/thread_key.c	/^void *child2 (void *arg)$/;"	f
+createStack	stack/stack_array.c	/^struct Stack* createStack(unsigned capacity)$/;"	f
+create_key	threads/thread_key.c	/^int create_key () {$/;"	f
+data	linked_list/l1.c	/^			int data;$/;"	m	struct:node	file:
+data	stack/stack_linked.c	/^    int data;$/;"	m	struct:StackNode	file:
+delete_key	threads/thread_key.c	/^int delete_key () {$/;"	f
+fun1	threads/main.c	/^void *fun1()$/;"	f
+fun2	threads/main.c	/^void *fun2(){$/;"	f
+fun3	threads/main.c	/^void *fun3(){$/;"	f
+hellofunction	makefile/hellofunc.c	/^void hellofunction(void) {$/;"	f
+i	threads/thread_key.c	/^    int i;$/;"	m	struct:test_struct	file:
+insert	linked_list/l1.c	/^void insert(struct node *prev_node, int new_data){$/;"	f
+isEmpty	stack/stack_array.c	/^int isEmpty(struct Stack* stack)$/;"	f
+isEmpty	stack/stack_linked.c	/^int isEmpty(struct StackNode *root)$/;"	f
+isFull	stack/stack_array.c	/^int isFull(struct Stack* stack)$/;"	f
+k	threads/thread_key.c	/^    float k;$/;"	m	struct:test_struct	file:
+key	threads/thread_key.c	/^pthread_key_t key;$/;"	v
+key2	threads/thread_key.c	/^pthread_key_t key2;$/;"	v
+main	linked_list/l1.c	/^int main(){		$/;"	f
+main	makefile/hellomake.c	/^int main() {$/;"	f
+main	pointers/to_array.c	/^int main()$/;"	f
+main	pointers/to_structure.c	/^void main(){$/;"	f
+main	socket/tcp/client.c	/^  int main(void)$/;"	f
+main	socket/tcp/server.c	/^  int main(void)$/;"	f
+main	socket/udp/client.c	/^int main(void)$/;"	f
+main	socket/udp/server.c	/^int main(void)$/;"	f
+main	stack/stack_array.c	/^int main()$/;"	f
+main	stack/stack_linked.c	/^int main()$/;"	f
+main	threads/main.c	/^int main()$/;"	f
+main	threads/main1.c	/^int main()$/;"	f
+main	threads/thread_id.c	/^int main()$/;"	f
+main	threads/thread_key.c	/^int main (void)$/;"	f
+module.start	threads/TCP_SERVER_WIFI_AS_CLIENT/app.lua	/^function module.start()$/;"	f
+module.start	threads/TCP_SERVER_WIFI_AS_CLIENT/setup.lua	/^  function module.start()$/;"	f
+name	pointers/to_structure.c	/^	char name[21];	$/;"	m	struct:__anon1	file:
+newNode	stack/stack_linked.c	/^struct StackNode* newNode(int data)$/;"	f
+next	linked_list/l1.c	/^			struct node *next;$/;"	m	struct:node	typeref:struct:node::node	file:
+next	stack/stack_linked.c	/^    struct StackNode* next;$/;"	m	struct:StackNode	typeref:struct:StackNode::StackNode	file:
+node	linked_list/l1.c	/^	struct node$/;"	s	file:
+peek	stack/stack_linked.c	/^int peek(struct StackNode* root)$/;"	f
+pop	stack/stack_array.c	/^int pop(struct Stack* stack)$/;"	f
+pop	stack/stack_linked.c	/^int pop(struct StackNode** root)$/;"	f
+print_message_function	threads/main1.c	/^void *print_message_function( void *ptr )$/;"	f
+print_thread_id	threads/thread_id.c	/^void print_thread_id(pthread_t id)$/;"	f
+printdata	threads/thread_key.c	/^int printdata (int t) {  \/* print specific data for threads *\/$/;"	f
+printlist	linked_list/l1.c	/^void printlist(struct node *n)$/;"	f
+push	linked_list/l1.c	/^void push(struct node ** head_ref, int new_data)$/;"	f
+push	stack/stack_array.c	/^void push(struct Stack* stack, int item)$/;"	f
+push	stack/stack_linked.c	/^void push(struct StackNode** root, int data)$/;"	f
+rec	pointers/to_structure.c	/^}rec;$/;"	t	typeref:struct:__anon1	file:
+setspecificvar	threads/thread_key.c	/^int setspecificvar () { \/* Set specific data for threads *\/$/;"	f
+struct_data	threads/thread_key.c	/^}struct_data;$/;"	v	typeref:struct:test_struct
+temp	threads/thread_key.c	/^int temp;$/;"	v
+test_struct	threads/thread_key.c	/^struct test_struct {$/;"	s	file:
+top	stack/stack_array.c	/^    int top;$/;"	m	struct:Stack	file:
+wifi_start	threads/TCP_SERVER_WIFI_AS_CLIENT/setup.lua	/^  local function wifi_start(list_aps)$/;"	f
+wifi_wait_ip	threads/TCP_SERVER_WIFI_AS_CLIENT/setup.lua	/^local function wifi_wait_ip()$/;"	f

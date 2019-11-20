@@ -1,0 +1,19 @@
+#include <stdio.h>
+struct taylor{
+	int a;
+	int wa;
+	char aq[0];
+};
+union swift{
+	char a;
+	char wa;
+	char aw;
+	char ww;
+};
+int main(){
+	printf("size of struct : %ld\n",sizeof(struct taylor));
+	printf("size of unoin  : %ld\n",sizeof(union swift));
+	union swift *degi;
+	degi = malloc(4);
+}
+

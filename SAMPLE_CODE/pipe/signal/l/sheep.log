@@ -1,0 +1,4 @@
+Jun 28 12:42:15   INFO [main] md_add_disk(338) /home/saurabh/SAURABH_INVENTUM_TRAINING/SAMPLE_CODE/pipe/signal/l/obj, vdisk nr 252, total disk 1
+Jun 28 12:42:15  ERROR [main] create_listen_ports(108) failed to bind server socket: Address already in use
+Jun 28 12:42:15  ERROR [main] create_listen_ports(108) failed to bind server socket: Address already in use
+Jun 28 12:42:15  ERROR [main] create_listen_ports(132) failed to create a listening port

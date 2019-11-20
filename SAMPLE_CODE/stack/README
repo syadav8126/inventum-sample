@@ -1,0 +1,2 @@
+alloca(1) - allloca(16) :: will allocate 32 bytes on memory on stack
+alloca(16) - allloca(32) :: will allocate 64 bytes on memory on stack

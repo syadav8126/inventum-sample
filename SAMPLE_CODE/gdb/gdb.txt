@@ -1,0 +1,12 @@
+Already logging to gdb.txt.
+Already logging to gdb.txt.
+Already logging to gdb.txt.
+Already logging to gdb.txt.
+Already logging to gdb.txt.
+Already logging to gdb.txt.
+Quit
+Exception ignored in: <gdb.GdbOutputFile object at 0x7f5369fdc8d0>
+Traceback (most recent call last):
+  File "/usr/share/gdb/python/gdb/__init__.py", line 43, in flush
+    def flush(self):
+KeyboardInterrupt

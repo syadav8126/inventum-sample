@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+NO_SEM	sharedstacklib.c	3;"	d	file:
+P	sharedstacklib.c	6;"	d	file:
+Pop	sharedstacklib.c	/^struct sembuf Pop; $/;"	v	typeref:struct:sembuf
+V	sharedstacklib.c	9;"	d	file:
+Vop	sharedstacklib.c	/^struct sembuf Vop; $/;"	v	typeref:struct:sembuf
+_MYLIB_H_	stacklib.h	14;"	d
+data_size	stacklib.h	/^	int data_size; \/\/ integer or character $/;"	m	struct:stack_desc
+ele_no	stacklib.h	/^	int ele_no; $/;"	m	struct:stack_desc
+free	stacklib.h	/^	bool free; \/\/ stack is used by any process ot not $/;"	m	struct:stack_desc
+k	sharedstacklib.c	/^int* k; $/;"	v
+main	main.c	/^int main() $/;"	f
+main	main2.c	/^int main() $/;"	f
+shared_stacks	sharedstacklib.c	/^struct stack_desc (*shared_stacks)[10]; $/;"	v	typeref:struct:stack_desc
+shstackget	sharedstacklib.c	/^void shstackget(key_t mykey, int data_size, int stack_size) $/;"	f
+shstackpop	sharedstacklib.c	/^void shstackpop(key_t key) $/;"	f
+shstackpush	sharedstacklib.c	/^void shstackpush(key_t key, int ele) $/;"	f
+shstackrm	sharedstacklib.c	/^void shstackrm(key_t key) $/;"	f
+stack_desc	stacklib.h	/^struct stack_desc { $/;"	s
+stack_desc	stacklib.h	/^typedef struct stack_desc stack_desc; $/;"	t	typeref:struct:stack_desc
+stack_size	stacklib.h	/^	int stack_size; $/;"	m	struct:stack_desc
+stkey	stacklib.h	/^	key_t stkey; \/\/ key for the stack $/;"	m	struct:stack_desc
+top	stacklib.h	/^	int top; $/;"	m	struct:stack_desc

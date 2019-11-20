@@ -1,0 +1,626 @@
+// unknowndefine __SIZE_TYPE__ long unsigned int
+// unknowndefine __PTRDIFF_TYPE__ long int
+// unknowndefine __WCHAR_TYPE__ int
+// unknowndefine __WINT_TYPE__ unsigned int
+// unknowndefine __INTMAX_TYPE__ long int
+// unknowndefine __UINTMAX_TYPE__ long unsigned int
+// unknowndefine __CHAR16_TYPE__ short unsigned int
+// unknowndefine __CHAR32_TYPE__ unsigned int
+// unknowndefine __SIG_ATOMIC_TYPE__ int
+// unknowndefine __INT8_TYPE__ signed char
+// unknowndefine __INT16_TYPE__ short int
+// unknowndefine __INT32_TYPE__ int
+// unknowndefine __INT64_TYPE__ long int
+// unknowndefine __UINT8_TYPE__ unsigned char
+// unknowndefine __UINT16_TYPE__ short unsigned int
+// unknowndefine __UINT32_TYPE__ unsigned int
+// unknowndefine __UINT64_TYPE__ long unsigned int
+// unknowndefine __INT_LEAST8_TYPE__ signed char
+// unknowndefine __INT_LEAST16_TYPE__ short int
+// unknowndefine __INT_LEAST32_TYPE__ int
+// unknowndefine __INT_LEAST64_TYPE__ long int
+// unknowndefine __UINT_LEAST8_TYPE__ unsigned char
+// unknowndefine __UINT_LEAST16_TYPE__ short unsigned int
+// unknowndefine __UINT_LEAST32_TYPE__ unsigned int
+// unknowndefine __UINT_LEAST64_TYPE__ long unsigned int
+// unknowndefine __INT_FAST8_TYPE__ signed char
+// unknowndefine __INT_FAST16_TYPE__ long int
+// unknowndefine __INT_FAST32_TYPE__ long int
+// unknowndefine __INT_FAST64_TYPE__ long int
+// unknowndefine __UINT_FAST8_TYPE__ unsigned char
+// unknowndefine __UINT_FAST16_TYPE__ long unsigned int
+// unknowndefine __UINT_FAST32_TYPE__ long unsigned int
+// unknowndefine __UINT_FAST64_TYPE__ long unsigned int
+// unknowndefine __INTPTR_TYPE__ long int
+// unknowndefine __UINTPTR_TYPE__ long unsigned int
+// unknowndefine __DBL_MAX__ ((double)1.1)
+// unknowndefine __DBL_MIN__ ((double)1.1)
+// unknowndefine __DBL_EPSILON__ ((double)1.1)
+// unknowndefine __DBL_DENORM_MIN__ ((double)1.1)
+// unknowndefine __LEAF , __leaf__
+// unknowndefine __LEAF_ATTR __attribute__ ((__leaf__))
+// unknowndefine __THROW __attribute__ ((__nothrow__ __LEAF))
+// unknowndefine __THROWNL __attribute__ ((__nothrow__))
+// unknowndefine __ptr_t void *
+// unknowndefine __long_double_t long double
+// unknowndefine __flexarr []
+// unknowndefine __attribute_malloc__ __attribute__ ((__malloc__))
+// unknowndefine __attribute_pure__ __attribute__ ((__pure__))
+// unknowndefine __attribute_const__ __attribute__ ((__const__))
+// unknowndefine __attribute_used__ __attribute__ ((__used__))
+// unknowndefine __attribute_noinline__ __attribute__ ((__noinline__))
+// unknowndefine __attribute_deprecated__ __attribute__ ((__deprecated__))
+// unknowndefine __attribute_warn_unused_result__ __attribute__ ((__warn_unused_result__))
+// unknowndefine __always_inline __inline __attribute__ ((__always_inline__))
+// unknowndefine __attribute_artificial__ __attribute__ ((__artificial__))
+// unknowndefine __extern_inline extern __inline __attribute__ ((__gnu_inline__))
+// unknowndefine __extern_always_inline extern __always_inline __attribute__ ((__gnu_inline__))
+// unknowndefine __fortify_function __extern_always_inline __attribute_artificial__
+// unknowndefine __restrict_arr __restrict
+// unknowndefine NULL ((void *)0)
+// unknowndefine __S16_TYPE short int
+// unknowndefine __U16_TYPE unsigned short int
+// unknowndefine __S32_TYPE int
+// unknowndefine __U32_TYPE unsigned int
+// unknowndefine __SLONGWORD_TYPE long int
+// unknowndefine __ULONGWORD_TYPE unsigned long int
+// unknowndefine __SQUAD_TYPE long int
+// unknowndefine __UQUAD_TYPE unsigned long int
+// unknowndefine __SWORD_TYPE long int
+// unknowndefine __UWORD_TYPE unsigned long int
+// unknowndefine __SLONG32_TYPE int
+// unknowndefine __ULONG32_TYPE unsigned int
+// unknowndefine __S64_TYPE long int
+// unknowndefine __U64_TYPE unsigned long int
+// unknowndefine __STD_TYPE typedef
+// unknowndefine __SYSCALL_SLONG_TYPE __SLONGWORD_TYPE
+// unknowndefine __SYSCALL_ULONG_TYPE __ULONGWORD_TYPE
+// unknowndefine __DEV_T_TYPE __UQUAD_TYPE
+// unknowndefine __UID_T_TYPE __U32_TYPE
+// unknowndefine __GID_T_TYPE __U32_TYPE
+// unknowndefine __INO_T_TYPE __SYSCALL_ULONG_TYPE
+// unknowndefine __INO64_T_TYPE __UQUAD_TYPE
+// unknowndefine __MODE_T_TYPE __U32_TYPE
+// unknowndefine __NLINK_T_TYPE __SYSCALL_ULONG_TYPE
+// unknowndefine __FSWORD_T_TYPE __SYSCALL_SLONG_TYPE
+// unknowndefine __OFF_T_TYPE __SYSCALL_SLONG_TYPE
+// unknowndefine __OFF64_T_TYPE __SQUAD_TYPE
+// unknowndefine __PID_T_TYPE __S32_TYPE
+// unknowndefine __RLIM_T_TYPE __SYSCALL_ULONG_TYPE
+// unknowndefine __RLIM64_T_TYPE __UQUAD_TYPE
+// unknowndefine __BLKCNT_T_TYPE __SYSCALL_SLONG_TYPE
+// unknowndefine __BLKCNT64_T_TYPE __SQUAD_TYPE
+// unknowndefine __FSBLKCNT_T_TYPE __SYSCALL_ULONG_TYPE
+// unknowndefine __FSBLKCNT64_T_TYPE __UQUAD_TYPE
+// unknowndefine __FSFILCNT_T_TYPE __SYSCALL_ULONG_TYPE
+// unknowndefine __FSFILCNT64_T_TYPE __UQUAD_TYPE
+// unknowndefine __ID_T_TYPE __U32_TYPE
+// unknowndefine __CLOCK_T_TYPE __SYSCALL_SLONG_TYPE
+// unknowndefine __TIME_T_TYPE __SYSCALL_SLONG_TYPE
+// unknowndefine __USECONDS_T_TYPE __U32_TYPE
+// unknowndefine __SUSECONDS_T_TYPE __SYSCALL_SLONG_TYPE
+// unknowndefine __DADDR_T_TYPE __S32_TYPE
+// unknowndefine __KEY_T_TYPE __S32_TYPE
+// unknowndefine __CLOCKID_T_TYPE __S32_TYPE
+// unknowndefine __TIMER_T_TYPE void *
+// unknowndefine __BLKSIZE_T_TYPE __SYSCALL_SLONG_TYPE
+// unknowndefine __FSID_T_TYPE struct { int __val[2]; }
+// unknowndefine __SSIZE_T_TYPE __SWORD_TYPE
+// unknowndefine __CPU_MASK_TYPE __SYSCALL_ULONG_TYPE
+// unknowndefine NULL ((void *)0)
+// unknowndefine _G_va_list __gnuc_va_list
+// unknowndefine _G_HAVE_ST_BLKSIZE defined (_STATBUF_ST_BLKSIZE)
+// unknowndefine _IO_fpos_t _G_fpos_t
+// unknowndefine _IO_fpos64_t _G_fpos64_t
+// unknowndefine _IO_size_t size_t
+// unknowndefine _IO_ssize_t __ssize_t
+// unknowndefine _IO_off_t __off_t
+// unknowndefine _IO_off64_t __off64_t
+// unknowndefine _IO_pid_t __pid_t
+// unknowndefine _IO_uid_t __uid_t
+// unknowndefine _IO_iconv_t _G_iconv_t
+// unknowndefine _IO_HAVE_ST_BLKSIZE _G_HAVE_ST_BLKSIZE
+// unknowndefine _IO_va_list _G_va_list
+// unknowndefine _IO_wint_t wint_t
+// unknowndefine _IO_va_list __gnuc_va_list
+// unknowndefine _IO_file_flags _flags
+// unknowndefine _IO_stdin ((_IO_FILE*)(&_IO_2_1_stdin_))
+// unknowndefine _IO_stdout ((_IO_FILE*)(&_IO_2_1_stdout_))
+// unknowndefine _IO_stderr ((_IO_FILE*)(&_IO_2_1_stderr_))
+// unknowndefine stdin stdin
+// unknowndefine stdout stdout
+// unknowndefine stderr stderr
+type _size_t uint64
+type ___u_char uint8
+type ___u_short uint16
+type ___u_int uint32
+type ___u_long uint64
+type ___int8_t int8
+type ___uint8_t uint8
+type ___int16_t int16
+type ___uint16_t uint16
+type ___int32_t int32
+type ___uint32_t uint32
+type ___int64_t int64
+type ___uint64_t uint64
+type ___quad_t int64
+type ___u_quad_t uint64
+type ___dev_t uint64
+type ___uid_t uint32
+type ___gid_t uint32
+type ___ino_t uint64
+type ___ino64_t uint64
+type ___mode_t uint32
+type ___nlink_t uint64
+type ___off_t int64
+type ___off64_t int64
+type ___pid_t int32
+type ___fsid_t struct { __val [1+1]int32; }
+const _sizeof___fsid_t = 8
+type ___clock_t int64
+type ___rlim_t uint64
+type ___rlim64_t uint64
+type ___id_t uint32
+type ___time_t int64
+type ___useconds_t uint32
+type ___suseconds_t int64
+type ___daddr_t int32
+type ___key_t int32
+type ___clockid_t int32
+type ___timer_t *byte
+type ___blksize_t int64
+type ___blkcnt_t int64
+type ___blkcnt64_t int64
+type ___fsblkcnt_t uint64
+type ___fsblkcnt64_t uint64
+type ___fsfilcnt_t uint64
+type ___fsfilcnt64_t uint64
+type ___fsword_t int64
+type ___ssize_t int64
+type ___syscall_slong_t int64
+type ___syscall_ulong_t uint64
+type ___loff_t int64
+type ___qaddr_t *int64
+type ___caddr_t *int8
+type ___intptr_t int64
+type ___socklen_t uint32
+type _FILE struct { _flags int32; _IO_read_ptr *int8; _IO_read_end *int8; _IO_read_base *int8; _IO_write_base *int8; _IO_write_ptr *int8; _IO_write_end *int8; _IO_buf_base *int8; _IO_buf_end *int8; _IO_save_base *int8; _IO_backup_base *int8; _IO_save_end *int8; _markers *__IO_marker; _chain *__IO_FILE; _fileno int32; _flags2 int32; _old_offset int64; _cur_column uint16; _vtable_offset int8; _shortbuf [0+1]int8; _lock *byte; _offset int64; __pad1 *byte; __pad2 *byte; __pad3 *byte; __pad4 *byte; __pad5 uint64; _mode int32; _unused2 [19+1]int8; }
+const _sizeof_FILE = 216
+type ___FILE struct { _flags int32; _IO_read_ptr *int8; _IO_read_end *int8; _IO_read_base *int8; _IO_write_base *int8; _IO_write_ptr *int8; _IO_write_end *int8; _IO_buf_base *int8; _IO_buf_end *int8; _IO_save_base *int8; _IO_backup_base *int8; _IO_save_end *int8; _markers *__IO_marker; _chain *__IO_FILE; _fileno int32; _flags2 int32; _old_offset int64; _cur_column uint16; _vtable_offset int8; _shortbuf [0+1]int8; _lock *byte; _offset int64; __pad1 *byte; __pad2 *byte; __pad3 *byte; __pad4 *byte; __pad5 uint64; _mode int32; _unused2 [19+1]int8; }
+const _sizeof___FILE = 216
+type ___mbstate_t struct { __count int32; __value struct { __wch uint32; }; }
+const _sizeof___mbstate_t = 8
+type __G_fpos_t struct { __pos int64; __state ___mbstate_t; }
+const _sizeof__G_fpos_t = 16
+type __G_fpos64_t struct { __pos int64; __state ___mbstate_t; }
+const _sizeof__G_fpos64_t = 16
+type ___gnuc_va_list [0+1]struct { gp_offset uint32; fp_offset uint32; overflow_arg_area *byte; reg_save_area *byte; }
+// type __IO_lock_t INVALID-type
+type __IO_marker struct { _next *__IO_marker; _sbuf *__IO_FILE; _pos int32; }
+const _sizeof__IO_marker = 24
+type __IO_FILE struct { _flags int32; _IO_read_ptr *int8; _IO_read_end *int8; _IO_read_base *int8; _IO_write_base *int8; _IO_write_ptr *int8; _IO_write_end *int8; _IO_buf_base *int8; _IO_buf_end *int8; _IO_save_base *int8; _IO_backup_base *int8; _IO_save_end *int8; _markers *__IO_marker; _chain *__IO_FILE; _fileno int32; _flags2 int32; _old_offset int64; _cur_column uint16; _vtable_offset int8; _shortbuf [0+1]int8; _lock *byte; _offset int64; __pad1 *byte; __pad2 *byte; __pad3 *byte; __pad4 *byte; __pad5 uint64; _mode int32; _unused2 [19+1]int8; }
+const _sizeof__IO_FILE = 216
+// type ___io_read_fn func*(*byte, *int8, uint64) int64
+// type ___io_write_fn func*(*byte, *int8, uint64) int64
+// type ___io_seek_fn func*(*byte, *int64, int32) int32
+// type ___io_close_fn func*(*byte) int32
+type _va_list [0+1]___va_list_tag
+type _off_t int64
+type _ssize_t int64
+type _fpos_t struct { __pos int64; __state ___mbstate_t; }
+const _sizeof_fpos_t = 16
+func _memcmp (*byte, *byte, uint64) int32 __asm__("memcmp")
+func _main () int32 __asm__("main")
+func _memcmp (*byte, *byte, uint64) int32 __asm__("memcmp")
+func _fprintf (*_FILE, *int8, ...interface{}) int32 __asm__("fprintf")
+func _putc (int32, *_FILE) int32 __asm__("putc")
+func _putc_unlocked (int32, *_FILE) int32 __asm__("putc_unlocked")
+func _fputc (int32, *_FILE) int32 __asm__("fputc")
+func _fputc_unlocked (int32, *_FILE) int32 __asm__("fputc_unlocked")
+func _fputs (*int8, *_FILE) int32 __asm__("fputs")
+func _fscanf (*_FILE, *int8, ...interface{}) int32 __asm__("*__isoc99_fscanf")
+func _fwrite (*byte, uint64, uint64, *_FILE) uint64 __asm__("fwrite")
+func _fwrite_unlocked (*byte, uint64, uint64, *_FILE) uint64 __asm__("fwrite_unlocked")
+func _printf (*int8, ...interface{}) int32 __asm__("printf")
+func _putchar (int32) int32 __asm__("putchar")
+func _putchar_unlocked (int32) int32 __asm__("putchar_unlocked")
+func _puts (*int8) int32 __asm__("puts")
+func _scanf (*int8, ...interface{}) int32 __asm__("*__isoc99_scanf")
+func _snprintf (*int8, uint64, *int8, ...interface{}) int32 __asm__("snprintf")
+func _sprintf (*int8, *int8, ...interface{}) int32 __asm__("sprintf")
+func _sscanf (*int8, *int8, ...interface{}) int32 __asm__("*__isoc99_sscanf")
+func _vfprintf (*_FILE, *int8, *___va_list_tag) int32 __asm__("vfprintf")
+func _vfscanf (*_FILE, *int8, *___va_list_tag) int32 __asm__("*__isoc99_vfscanf")
+func _vprintf (*int8, *___va_list_tag) int32 __asm__("vprintf")
+func _vscanf (*int8, *___va_list_tag) int32 __asm__("*__isoc99_vscanf")
+func _vsnprintf (*int8, uint64, *int8, *___va_list_tag) int32 __asm__("vsnprintf")
+func _vsprintf (*int8, *int8, *___va_list_tag) int32 __asm__("vsprintf")
+func _vsscanf (*int8, *int8, *___va_list_tag) int32 __asm__("*__isoc99_vsscanf")
+var __IO_2_1_stdin_ struct { }
+var __IO_2_1_stdout_ __IO_FILE_plus
+var __IO_2_1_stderr_ __IO_FILE_plus
+func ___underflow (*__IO_FILE) int32 __asm__("__underflow")
+func ___uflow (*__IO_FILE) int32 __asm__("__uflow")
+func ___overflow (*__IO_FILE, int32) int32 __asm__("__overflow")
+func __IO_getc (*__IO_FILE) int32 __asm__("_IO_getc")
+func __IO_putc (int32, *__IO_FILE) int32 __asm__("_IO_putc")
+func __IO_feof (*__IO_FILE) int32 __asm__("_IO_feof")
+func __IO_ferror (*__IO_FILE) int32 __asm__("_IO_ferror")
+func __IO_peekc_locked (*__IO_FILE) int32 __asm__("_IO_peekc_locked")
+func __IO_flockfile (*__IO_FILE) __asm__("_IO_flockfile")
+func __IO_funlockfile (*__IO_FILE) __asm__("_IO_funlockfile")
+func __IO_ftrylockfile (*__IO_FILE) int32 __asm__("_IO_ftrylockfile")
+func __IO_vfscanf (*__IO_FILE, *int8, *___va_list_tag, *int32) int32 __asm__("_IO_vfscanf")
+func __IO_vfprintf (*__IO_FILE, *int8, *___va_list_tag) int32 __asm__("_IO_vfprintf")
+func __IO_padn (*__IO_FILE, int32, int64) int64 __asm__("_IO_padn")
+func __IO_sgetn (*__IO_FILE, *byte, uint64) uint64 __asm__("_IO_sgetn")
+func __IO_seekoff (*__IO_FILE, int64, int32, int32) int64 __asm__("_IO_seekoff")
+func __IO_seekpos (*__IO_FILE, int64, int32) int64 __asm__("_IO_seekpos")
+func __IO_free_backup_area (*__IO_FILE) __asm__("_IO_free_backup_area")
+var _stdin *__IO_FILE
+var _stdout *__IO_FILE
+var _stderr *__IO_FILE
+func _remove (*int8) int32 __asm__("remove")
+func _rename (*int8, *int8) int32 __asm__("rename")
+func _renameat (int32, *int8, int32, *int8) int32 __asm__("renameat")
+func _tmpfile () *_FILE __asm__("tmpfile")
+func _tmpnam (*int8) *int8 __asm__("tmpnam")
+func _tmpnam_r (*int8) *int8 __asm__("tmpnam_r")
+func _tempnam (*int8, *int8) *int8 __asm__("tempnam")
+func _fclose (*_FILE) int32 __asm__("fclose")
+func _fflush (*_FILE) int32 __asm__("fflush")
+func _fflush_unlocked (*_FILE) int32 __asm__("fflush_unlocked")
+func _fopen (*int8, *int8) *_FILE __asm__("fopen")
+func _freopen (*int8, *int8, *_FILE) *_FILE __asm__("freopen")
+func _fdopen (int32, *int8) *_FILE __asm__("fdopen")
+func _fmemopen (*byte, uint64, *int8) *_FILE __asm__("fmemopen")
+func _open_memstream (**int8, *uint64) *_FILE __asm__("open_memstream")
+func _setbuf (*_FILE, *int8) __asm__("setbuf")
+func _setvbuf (*_FILE, *int8, int32, uint64) int32 __asm__("setvbuf")
+func _setbuffer (*_FILE, *int8, uint64) __asm__("setbuffer")
+func _setlinebuf (*_FILE) __asm__("setlinebuf")
+func _vdprintf (int32, *int8, *___va_list_tag) int32 __asm__("vdprintf")
+func _dprintf (int32, *int8, ...interface{}) int32 __asm__("dprintf")
+func _fgetc (*_FILE) int32 __asm__("fgetc")
+func _getc (*_FILE) int32 __asm__("getc")
+func _getchar () int32 __asm__("getchar")
+func _getc_unlocked (*_FILE) int32 __asm__("getc_unlocked")
+func _getchar_unlocked () int32 __asm__("getchar_unlocked")
+func _fgetc_unlocked (*_FILE) int32 __asm__("fgetc_unlocked")
+func _getw (*_FILE) int32 __asm__("getw")
+func _putw (int32, *_FILE) int32 __asm__("putw")
+func _fgets (*int8, int32, *_FILE) *int8 __asm__("fgets")
+func ___getdelim (**int8, *uint64, int32, *_FILE) int64 __asm__("__getdelim")
+func _getdelim (**int8, *uint64, int32, *_FILE) int64 __asm__("getdelim")
+func _getline (**int8, *uint64, *_FILE) int64 __asm__("getline")
+func _ungetc (int32, *_FILE) int32 __asm__("ungetc")
+func _fread (*byte, uint64, uint64, *_FILE) uint64 __asm__("fread")
+func _fread_unlocked (*byte, uint64, uint64, *_FILE) uint64 __asm__("fread_unlocked")
+func _fseek (*_FILE, int64, int32) int32 __asm__("fseek")
+func _ftell (*_FILE) int64 __asm__("ftell")
+func _rewind (*_FILE) __asm__("rewind")
+func _fseeko (*_FILE, int64, int32) int32 __asm__("fseeko")
+func _ftello (*_FILE) int64 __asm__("ftello")
+func _fgetpos (*_FILE, *_fpos_t) int32 __asm__("fgetpos")
+func _fsetpos (*_FILE, *_fpos_t) int32 __asm__("fsetpos")
+func _clearerr (*_FILE) __asm__("clearerr")
+func _feof (*_FILE) int32 __asm__("feof")
+func _ferror (*_FILE) int32 __asm__("ferror")
+func _clearerr_unlocked (*_FILE) __asm__("clearerr_unlocked")
+func _feof_unlocked (*_FILE) int32 __asm__("feof_unlocked")
+func _ferror_unlocked (*_FILE) int32 __asm__("ferror_unlocked")
+func _perror (*int8) __asm__("perror")
+var _sys_nerr int32
+var _sys_errlist [0]*int8
+func _fileno (*_FILE) int32 __asm__("fileno")
+func _fileno_unlocked (*_FILE) int32 __asm__("fileno_unlocked")
+func _popen (*int8, *int8) *_FILE __asm__("popen")
+func _pclose (*_FILE) int32 __asm__("pclose")
+func _ctermid (*int8) *int8 __asm__("ctermid")
+func _flockfile (*_FILE) __asm__("flockfile")
+func _ftrylockfile (*_FILE) int32 __asm__("ftrylockfile")
+func _funlockfile (*_FILE) __asm__("funlockfile")
+func _main () int32 __asm__("main")
+const __IOLBF = 1
+const __IO_DONT_CLOSE = 0100000
+const ___DEC64_SUBNORMAL_MIN__ = 0.000000000000001E-383
+const ___ORDER_PDP_ENDIAN__ = 3412
+const __IO_BAD_SEEN = 0x4000
+const ___FLT_MANT_DIG__ = 24
+const ___USE_ISOC11 = 1
+const ___DEC64_MANT_DIG__ = 16
+const ___k8 = 1
+const ___INT_LEAST64_MAX__ = 0x7fffffffffffffff
+const ___DBL_MIN_EXP__ = (-1021)
+const __STDIO_H = 1
+const ___LONG_MAX__ = 0x7fffffffffffffff
+const ___INT_FAST16_MAX__ = 0x7fffffffffffffff
+const __IO_IS_APPENDING = 0x1000
+const ___STDC_UTF_32__ = 1
+const ___FLT_EVAL_METHOD__ = 0
+const ___UINTPTR_MAX__ = 0xffffffffffffffff
+const ___FLT_MIN__ = 1.1
+const ___INT16_MAX__ = 0x7fff
+const ___FLT_MIN_EXP__ = (-125)
+const ___INT_LEAST8_MAX__ = 0x7f
+const ___SIG_ATOMIC_MAX__ = 0x7fffffff
+const ___STDC_IEC_559_COMPLEX__ = 1
+const ___SIZEOF_INT128__ = 16
+const _L_tmpnam = 20
+const __IO_SKIPWS = 01
+const ___GCC_ATOMIC_BOOL_LOCK_FREE = 2
+const ___USE_ATFILE = 1
+const ___SIZEOF_PTRDIFF_T__ = 8
+const ___ORDER_BIG_ENDIAN__ = 4321
+const ___UINT_FAST64_MAX__ = 0xffffffffffffffff
+const ___SIG_ATOMIC_MIN__ = (-___SIG_ATOMIC_MAX__ - 1)
+const __IO_MAGIC_MASK = 0xFFFF0000
+const ___FLT_RADIX__ = 2
+const __IO_UNBUFFERED = 2
+const __IO_USER_LOCK = 0x8000
+const ___GCC_IEC_559 = 2
+const ___DEC32_SUBNORMAL_MIN__ = 0.000001E-95
+const ___FILE_defined = 1
+const __IO_UNIFIED_JUMPTABLES = 1
+const ___ATOMIC_ACQUIRE = 2
+const __IO_LINE_BUF = 0x200
+const __IOFBF = 0
+const ___FLT_MAX__ = 1.1
+const ___PRAGMA_REDEFINE_EXTNAME = 1
+const ___DECIMAL_DIG__ = 21
+const ___USE_ISOC95 = 1
+const ___UINTMAX_MAX__ = 0xffffffffffffffff
+const ___GCC_ATOMIC_CHAR16_T_LOCK_FREE = 2
+const ___STDC_VERSION__ = 201112
+const ___FLT_MAX_10_EXP__ = 38
+const ___UINT_LEAST16_MAX__ = 0xffff
+const __IO_EOF_SEEN = 0x10
+const __IOS_TRUNC = 16
+const ___ATOMIC_RELAXED = 0
+const ___FLT_DECIMAL_DIG__ = 9
+const __IO_NO_READS = 4
+const ___GCC_ATOMIC_CHAR32_T_LOCK_FREE = 2
+const ___GCC_IEC_559_COMPLEX = 2
+const ___DBL_HAS_DENORM__ = 1
+const ___SSE2_MATH__ = 1
+const ___LP64__ = 1
+const ___SIZEOF_FLOAT128__ = 16
+const ___GCC_ATOMIC_TEST_AND_SET_TRUEVAL = 1
+const ___SIZEOF_LONG_DOUBLE__ = 16
+const __IOS_INPUT = 1
+const ___code_model_small__ = 1
+const ___SIZEOF_INT__ = 4
+const ___DEC32_MIN__ = 1E-95
+const ___SIZEOF_WCHAR_T__ = 4
+const ___STDC__ = 1
+const ___GNUC_MINOR__ = 5
+const ___SIZEOF_WINT_T__ = 4
+const __POSIX_C_SOURCE = 200809
+const ___UINT_FAST16_MAX__ = 0xffffffffffffffff
+const ___FLT_DENORM_MIN__ = 1.1
+const ___codecvt_partial = 1
+const ___linux = 1
+const ___GCC_ATOMIC_LONG_LOCK_FREE = 2
+const ___USE_POSIX2 = 1
+const ___SIZEOF_SHORT__ = 2
+const __IO_OCT = 040
+const ___amd64 = 1
+const ___FD_SETSIZE = 1024
+const ___DEC128_MIN__ = 1E-6143
+const ___LDBL_HAS_INFINITY__ = 1
+const ___INT_MAX__ = 0x7fffffff
+const ___DEC32_MAX__ = 9.999999E96
+const __IO_SCIENTIFIC = 04000
+const ___DBL_MAX_EXP__ = 1024
+const ___LDBL_MAX__ = 1.1
+const ___DBL_MIN_10_EXP__ = (-307)
+const ___LDBL_MAX_10_EXP__ = 4932
+const ___GNUC_PATCHLEVEL__ = 0
+const ___LDBL_HAS_QUIET_NAN__ = 1
+const __POSIX_SOURCE = 1
+const ___ORDER_LITTLE_ENDIAN__ = 1234
+const ___UINT32_MAX__ = 0xffffffff
+const ___DEC64_MIN_EXP__ = (-382)
+const ___UINT_LEAST32_MAX__ = 0xffffffff
+const ___LONG_LONG_MAX__ = 0x7fffffffffffffff
+const ___DEC128_SUBNORMAL_MIN__ = 0.000000000000000000000000000000001E-6143
+const ___FLT_MAX_EXP__ = 128
+const ___x86_64__ = 1
+const ___USE_XOPEN2K = 1
+const ___DBL_HAS_INFINITY__ = 1
+const ___DEC128_MAX__ = 9.999999999999999999999999999999999E6144
+const ___UINT_LEAST8_MAX__ = 0xff
+const __IO_DELETE_DONT_CLOSE = 0x40
+const ___DEC128_EPSILON__ = 1E-33
+const __OLD_STDIO_MAGIC = 0xFABC0000
+const __ATFILE_SOURCE = 1
+const ___SSP_STRONG__ = 3
+const __G_HAVE_MMAP = 1
+const ___SIZEOF_SIZE_T__ = 8
+const _SEEK_SET = 0
+const __IO_ERR_SEEN = 0x20
+const ___DBL_HAS_QUIET_NAN__ = 1
+const ___INT_FAST32_MAX__ = 0x7fffffffffffffff
+const ___ATOMIC_SEQ_CST = 5
+const ___DEC128_MANT_DIG__ = 34
+const __IO_CURRENTLY_PUTTING = 0x800
+const ___SIZEOF_DOUBLE__ = 8
+const ___INT32_MAX__ = 0x7fffffff
+const ___LDBL_MANT_DIG__ = 64
+const ___DEC128_MAX_EXP__ = 6145
+const _L_ctermid = 9
+const __BITS_TYPESIZES_H = 1
+const _P_tmpdir = "/tmp"
+const __IO_LINKED = 0x80
+const ___GLIBC__ = 2
+const ___DBL_DECIMAL_DIG__ = 17
+const ___codecvt_ok = 0
+const _FILENAME_MAX = 4096
+const ___STDC_IEC_559__ = 1
+const ___GCC_ATOMIC_INT_LOCK_FREE = 2
+const ___FLT_HAS_INFINITY__ = 1
+const ___x86_64 = 1
+const ___ATOMIC_HLE_ACQUIRE = 65536
+const ___STDC_HOSTED__ = 1
+const ___amd64__ = 1
+const __IOS_APPEND = 8
+const ___ATOMIC_CONSUME = 1
+const _FOPEN_MAX = 16
+const ___LDBL_MIN__ = 1.1
+const ___DEC32_MANT_DIG__ = 7
+const ___GCC_HAVE_SYNC_COMPARE_AND_SWAP_1 = 1
+const ___GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 = 1
+const ___FLOAT_WORD_ORDER__ = ___ORDER_LITTLE_ENDIAN__
+const ___GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 = 1
+const ___CHAR_BIT__ = 8
+const ___GCC_ATOMIC_SHORT_LOCK_FREE = 2
+const ___SHRT_MAX__ = 0x7fff
+const ___GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 = 1
+const __IO_FLAGS2_USER_WBUF = 8
+const __IO_NO_WRITES = 8
+const ___STDC_ISO_10646__ = 201505
+const ___LDBL_MAX_EXP__ = 16384
+const _linux = 1
+const ___FINITE_MATH_ONLY__ = 0
+const ___ATOMIC_HLE_RELEASE = 131072
+const __LP64 = 1
+const _SEEK_END = 2
+const __IO_IS_FILEBUF = 0x2000
+const __DEFAULT_SOURCE = 1
+const __IOS_ATEND = 4
+const ___DBL_MAX_10_EXP__ = 308
+const ___SSE2__ = 1
+const ___SIZEOF_POINTER__ = 8
+const ___GCC_ATOMIC_POINTER_LOCK_FREE = 2
+const __STDC_PREDEF_H = 1
+const ___INT_LEAST16_MAX__ = 0x7fff
+const __IO_SHOWPOS = 02000
+const ___UINT_LEAST64_MAX__ = 0xffffffffffffffff
+const ___FXSR__ = 1
+const ___FLT_EPSILON__ = 1.1
+const ___DEC64_EPSILON__ = 1E-15
+const ___GNU_LIBRARY__ = 6
+const ___INTMAX_MAX__ = 0x7fffffffffffffff
+const __IO_BOOLALPHA = 0200000
+const ___INTPTR_MAX__ = 0x7fffffffffffffff
+const ___USE_MISC = 1
+const ___INT8_MAX__ = 0x7f
+const __G_BUFSIZ = 8192
+const ___SIZEOF_LONG_LONG__ = 8
+const _unix = 1
+const ___DBL_MANT_DIG__ = 53
+const ___DEC64_MIN__ = 1E-383
+const ___SIZEOF_LONG__ = 8
+const ___gnu_linux__ = 1
+const ___INO_T_MATCHES_INO64_T = 1
+const ___UINT64_MAX__ = 0xffffffffffffffff
+const __IO_DEC = 020
+const ___UINT_FAST32_MAX__ = 0xffffffffffffffff
+const ___USE_XOPEN2K8 = 1
+const ___FLT_DIG__ = 6
+const ___BYTE_ORDER__ = ___ORDER_LITTLE_ENDIAN__
+const ___STDC_NO_THREADS__ = 1
+const ___PTRDIFF_MAX__ = 0x7fffffffffffffff
+const _SEEK_CUR = 1
+const ___UINT8_MAX__ = 0xff
+const ___DEC32_MIN_EXP__ = (-94)
+const ___VERSION__ = "5.5.0 20171010"
+const ___linux__ = 1
+const __IOS_NOCREATE = 32
+const ___SCHAR_MAX__ = 0x7f
+const ___GLIBC_MINOR__ = 23
+const ___ATOMIC_ACQ_REL = 4
+const ___DEC64_MAX__ = 9.999999999999999E384
+const ___STDC_UTF_16__ = 1
+const ___WORDSIZE = 64
+const ___codecvt_error = 2
+const __IOS_NOREPLACE = 64
+const ___WCHAR_MIN__ = (-___WCHAR_MAX__ - 1)
+const ___DEC_EVAL_METHOD__ = 2
+const _TMP_MAX = 238328
+const ___GXX_ABI_VERSION = 1009
+const ___unix = 1
+const ___INT_FAST8_MAX__ = 0x7f
+const ___OFF_T_MATCHES_OFF64_T = 1
+const __G_HAVE_MREMAP = 1
+const _EOF = (-1)
+const ___USE_POSIX199309 = 1
+const ___LDBL_MIN_10_EXP__ = (-4931)
+const __IO_SHOWBASE = 0200
+const ___LDBL_EPSILON__ = 1.1
+const __BITS_TYPES_H = 1
+const __SYS_CDEFS_H = 1
+const ___FLT_HAS_DENORM__ = 1
+const __IO_IN_BACKUP = 0x100
+const __IO_SHOWPOINT = 0400
+const __IO_FIXED = 010000
+const __IO_UNITBUF = 020000
+const __G_config_h = 1
+const ___WCHAR_MAX__ = 0x7fffffff
+const __IO_HEX = 0100
+const __IO_USER_BUF = 1
+const ___USE_POSIX_IMPLICITLY = 1
+const _____mbstate_t_defined = 1
+const ___GCC_ATOMIC_WCHAR_T_LOCK_FREE = 2
+const ___BIGGEST_ALIGNMENT__ = 16
+const ___SIZE_MAX__ = 0xffffffffffffffff
+const ___ATOMIC_RELEASE = 3
+const __IO_UPPERCASE = 01000
+const ___INT64_MAX__ = 0x7fffffffffffffff
+const ___SYSCALL_WORDSIZE = 64
+const __IO_BUFSIZ = __G_BUFSIZ
+const ___USE_POSIX199506 = 1
+const __IO_RIGHT = 04
+const ___WORDSIZE_TIME64_COMPAT32 = 1
+const ___LDBL_DIG__ = 18
+const ___SIZEOF_FLOAT80__ = 16
+const ___DEC128_MIN_EXP__ = (-6142)
+const ___WINT_MIN__ = 0
+const ___FLT_HAS_QUIET_NAN__ = 1
+const _____FILE_defined = 1
+const ___DEC32_EPSILON__ = 1E-6
+const ___ELF__ = 1
+const ___USE_FORTIFY_LEVEL = 0
+const __IO_LEFT = 02
+const ___MMX__ = 1
+const ___SSE__ = 1
+const ___DECIMAL_BID_FORMAT__ = 1
+const ___USE_POSIX = 1
+const ___WINT_MAX__ = 0xffffffff
+const ___GCC_HAVE_DWARF2_CFI_ASM = 1
+const ___GCC_ATOMIC_CHAR_LOCK_FREE = 2
+const ___LDBL_DENORM_MIN__ = 1.1
+const ___DEC64_MAX_EXP__ = 385
+const __IO_FLAGS2_NOTCANCEL = 2
+const __IO_MAGIC = 0xFBAD0000
+const ___DEC32_MAX_EXP__ = 97
+const ___FLT_MIN_10_EXP__ = (-37)
+const ___GNUC_STDC_INLINE__ = 1
+const ___GNUC__ = 5
+const ___USE_ISOC99 = 1
+const ___INT_LEAST32_MAX__ = 0x7fffffff
+const __IONBF = 2
+const __IO_STDIO = 040000
+const ___SIZEOF_FLOAT__ = 4
+const ___UINT_FAST8_MAX__ = 0xff
+const ___LDBL_HAS_DENORM__ = 1
+const ___LDBL_MIN_EXP__ = (-16381)
+const ___INT_FAST64_MAX__ = 0x7fffffffffffffff
+const __IO_TIED_PUT_GET = 0x400
+const __G_IO_IO_FILE_VERSION = 0x20001
+const ___NO_INLINE__ = 1
+const __FEATURES_H = 1
+const __IOS_BIN = 128
+const __IO_INTERNAL = 010
+const ___unix__ = 1
+const __IO_FLAGS2_MMAP = 1
+const __IOS_OUTPUT = 2
+const _BUFSIZ = __IO_BUFSIZ
+const ___codecvt_noconv = 3
+const ___DBL_DIG__ = 15
+const ___k8__ = 1
+const ___UINT16_MAX__ = 0xffff
+const ___GCC_ATOMIC_LLONG_LOCK_FREE = 2
+const ___SSE_MATH__ = 1
+type ___va_list_tag struct {}
+type __IO_FILE_plus struct {}
